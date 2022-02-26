@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    image: aronpc/cati-php:8.0-nginx
+    working_dir: /app
+    volumes:
+      - ./:/app
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:$PROJECT_NAME.avato.com.br'
+      - 'traefik.docker.network=web'

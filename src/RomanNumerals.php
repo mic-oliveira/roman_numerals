@@ -6,6 +6,11 @@ class RomanNumerals
 {
     public function convert(int $amount)
     {
-        return 'I';
+        switch ($amount) {
+            case 1:
+                return 'I';
+            case 5:
+                return 'V';
+        }
     }
 }

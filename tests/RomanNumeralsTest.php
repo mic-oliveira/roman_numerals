@@ -11,4 +11,11 @@ class RomanNumeralsTest extends TestCase
         $result = $romanNumeral->convert(1);
         $this->assertEquals('I', $result);
     }
+
+    public function test_convert_5_roman_numeral()
+    {
+        $romanNumeral = new RomanNumerals();
+        $result = $romanNumeral->convert(5);
+        $this->assertEquals('V', $result);
+    }
 }
