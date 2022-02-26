@@ -21,7 +21,8 @@ class RomanNumeralsTest extends TestCase
         return [
             [1, 'I'],
             [5, 'V'],
-            [10, 'X']
+            [10, 'X'],
+            [50, 'L']
         ];
     }
 }
