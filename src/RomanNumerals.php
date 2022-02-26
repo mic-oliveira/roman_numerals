@@ -27,12 +27,16 @@ class RomanNumerals
             case 80:
             case 90:
                 return TenConverter::tenConverter($amount);
-            case 50:
-                return 'L';
             case 100:
-                return 'C';
+            case 200:
+            case 300:
+            case 400:
             case 500:
-                return 'D';
+            case 600:
+            case 700:
+            case 800:
+            case 900:
+                return HundredsConverter::hundredsConverter($amount);
             case 1000:
                 return 'M';
         }
