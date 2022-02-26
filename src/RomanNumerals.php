@@ -13,6 +13,8 @@ class RomanNumerals
                 return 'II';
             case 3:
                 return 'III';
+            case 4:
+                return 'IIII';
             case 5:
                 return 'V';
             case 10:
