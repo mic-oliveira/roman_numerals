@@ -5,17 +5,23 @@ use PHPUnit\Framework\TestCase;
 
 class RomanNumeralsTest extends TestCase
 {
-    public function test_convert_1_roman_numeral()
+    /**
+     * @return void
+     * @dataProvider number
+     */
+    public function test_convert_roman_numeral($number, $romanNumber)
     {
         $romanNumeral = new RomanNumerals();
-        $result = $romanNumeral->convert(1);
-        $this->assertEquals('I', $result);
+        $result = $romanNumeral->convert($number);
+        $this->assertEquals($romanNumber, $result);
     }
 
-    public function test_convert_5_roman_numeral()
+    public function number()
     {
-        $romanNumeral = new RomanNumerals();
-        $result = $romanNumeral->convert(5);
-        $this->assertEquals('V', $result);
+        return [
+            [1, 'I'],
+            [5, 'V'],
+            [10, 'X']
+        ];
     }
 }
