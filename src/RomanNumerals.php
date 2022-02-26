@@ -17,6 +17,8 @@ class RomanNumerals
                 return 'L';
             case 100:
                 return 'C';
+            case 500:
+                return 'D';
         }
     }
 }
