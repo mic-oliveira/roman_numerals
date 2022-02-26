@@ -9,6 +9,8 @@ class RomanNumerals
         switch ($amount) {
             case 1:
                 return 'I';
+            case 2:
+                return 'II';
             case 5:
                 return 'V';
             case 10:
