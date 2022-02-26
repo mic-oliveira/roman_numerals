@@ -6,37 +6,25 @@ class RomanNumerals
 {
     public function convert(int $amount)
     {
-        if ($amount < 10) {
-            $converter = new RomanNumberConverter();
-            return $converter->converter($amount);
+        $romanNumber = '';
+        if (($amount / 1000) > 1) {
+            $converter = new RomanNumberConverter('M', 'D', 'M');
+            $romanNumber .= $converter->converter($amount /1000);
+            $amount %=1000;
         }
-        if (($amount % 10) === 0 && $amount < 100) {
+        if (($amount / 100) > 1) {
+            $converter = new RomanNumberConverter('C', 'D', 'M');
+            $romanNumber .= $converter->converter($amount /100);
+            $amount %=100;
+        }
+        if (($amount / 10) > 1) {
             $converter = new RomanNumberConverter('X', 'L', 'C');
-            return $converter->converter($amount/10);
+            $romanNumber .= $converter->converter($amount / 10);
+            $amount %=10;
         }
+        $converter = new RomanNumberConverter();
+        $romanNumber .= $converter->converter($amount);
 
-        if (($amount % 10) > 0 && $amount < 100 ) {
-            $converter = new RomanNumberConverter('X', 'L', 'C');
-            $number = $converter->converter($amount/10);
-
-            $converter = new RomanNumberConverter();
-            $number .= $converter->converter($amount%10);
-
-            return $number;
-        }
-        switch ($amount) {
-            case 100:
-            case 200:
-            case 300:
-            case 400:
-            case 500:
-            case 600:
-            case 700:
-            case 800:
-            case 900:
-                return HundredsConverter::hundredsConverter($amount);
-            case 1000:
-                return 'M';
-        }
+        return $romanNumber;
     }
 }

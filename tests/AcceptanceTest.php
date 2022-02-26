@@ -25,6 +25,9 @@ class AcceptanceTest extends TestCase
             [29, 'XXIX'],
             [80, 'LXXX'],
             [294, 'CCXCIV'],
+            [2000, 'MM'],
+            [2019, 'MMXIX'],
+            [2999, 'MMCMXCIX']
         ];
     }
 }

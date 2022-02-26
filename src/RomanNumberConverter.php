@@ -10,9 +10,10 @@ class RomanNumberConverter
 
     public function converter(int $amount): string
     {
-        if ($amount == 4) {
-            return sprintf('%s%s', $this->unitSymbol, $this->middleSymbol);
+        if ($amount == 10) {
+            return $this->postSymbol;
         }
+
         if ($amount == 9) {
             return sprintf('%s%s', $this->unitSymbol, $this->postSymbol);
         }
@@ -20,6 +21,11 @@ class RomanNumberConverter
         if ($amount >= 5) {
             return sprintf('%s%s', $this->middleSymbol,str_repeat($this->unitSymbol, $amount-5));
         }
+
+        if ($amount == 4) {
+            return sprintf('%s%s', $this->unitSymbol, $this->middleSymbol);
+        }
+
         return str_repeat($this->unitSymbol, $amount);
     }
 }
