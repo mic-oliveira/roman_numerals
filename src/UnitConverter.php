@@ -4,16 +4,12 @@ namespace Kata;
 
 class UnitConverter
 {
-
     public static function unitConverter(int $amount): string
     {
-        $number = '';
-
-        for ($i = 0; $i < $amount; $i++) {
-            $number .= 'I';
+        if ($amount >= 5) {
+            return sprintf('V%s',str_repeat('I', $amount-5));
         }
-
-        return $number;
+        return str_repeat('I', $amount);
     }
 
 }

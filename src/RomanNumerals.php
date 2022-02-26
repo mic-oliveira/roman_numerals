@@ -11,9 +11,12 @@ class RomanNumerals
             case 2:
             case 3:
             case 4:
-                return UnitConverter::unitConverter($amount);
             case 5:
-                return 'V';
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                return UnitConverter::unitConverter($amount);
             case 10:
                 return 'X';
             case 50:
