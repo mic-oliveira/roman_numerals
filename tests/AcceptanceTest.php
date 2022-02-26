@@ -22,7 +22,9 @@ class AcceptanceTest extends TestCase
         return [
             [4, 'IV'],
             [9, 'IX'],
-            [29, 'XXIX']
+            [29, 'XXIX'],
+            [80, 'LXXX'],
+            [294, 'CCXCIV'],
         ];
     }
 }

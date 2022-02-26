@@ -14,6 +14,16 @@ class RomanNumerals
             $converter = new RomanNumberConverter('X', 'L', 'C');
             return $converter->converter($amount/10);
         }
+
+        if (($amount % 10) > 0 && $amount < 100 ) {
+            $converter = new RomanNumberConverter('X', 'L', 'C');
+            $number = $converter->converter($amount/10);
+
+            $converter = new RomanNumberConverter();
+            $number .= $converter->converter($amount%10);
+
+            return $number;
+        }
         switch ($amount) {
             case 100:
             case 200:
