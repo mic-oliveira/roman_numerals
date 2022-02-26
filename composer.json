@@ -1,0 +1,14 @@
+{
+    "name": "root/app",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Oliveira",
+            "email": "oliveiramichael@oulook.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+
+}
