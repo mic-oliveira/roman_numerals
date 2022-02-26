@@ -18,7 +18,15 @@ class RomanNumerals
             case 9:
                 return UnitConverter::unitConverter($amount);
             case 10:
-                return 'X';
+            case 20:
+            case 30:
+            case 40:
+            case 50:
+            case 60:
+            case 70:
+            case 80:
+            case 90:
+                return TenConverter::tenConverter($amount);
             case 50:
                 return 'L';
             case 100:
